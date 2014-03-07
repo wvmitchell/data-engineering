@@ -1,0 +1,4 @@
+<%= form_tag('/dashboard', id: 'upload_form') do %>
+  <%= file_field_tag 'Deals', multipart: true %>
+  <%= submit_tag 'Submit' %>
+<% end %>

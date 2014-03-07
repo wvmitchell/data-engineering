@@ -10,7 +10,7 @@ describe 'uploading a form' do
       click_on 'Submit'
     end
 
-    expect(page.status).to eq(200)
+    page.should have_content('Gross Revenue')
   end
 
 end
