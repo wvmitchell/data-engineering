@@ -2,7 +2,16 @@
 
 <table id='purchasers'>
   <thead>
-    <tr>Name</tr>
-    <tr>Total Purchases</tr>
+    <tr>
+      <td>Name</td>
+      <td>Total Purchases</td>
+    </tr>
   </thead>
+  <tbody>
+    <% @deals.each do |deal| %>
+      <tr>
+        <td><%= deal.purchaser %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

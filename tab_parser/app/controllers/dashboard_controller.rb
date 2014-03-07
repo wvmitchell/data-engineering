@@ -16,6 +16,7 @@ class DashboardController < ApplicationController
   end
 
   def index
+    @deals = Deal.all
   end
 
 end
