@@ -22,6 +22,7 @@ class DashboardController < ApplicationController
 
   def index
     @deals = Deal.all
+    @total_revenue = Deal.total_revenue
   end
 
 end

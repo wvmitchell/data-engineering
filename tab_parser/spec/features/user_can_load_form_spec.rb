@@ -2,29 +2,38 @@ require 'spec_helper'
 
 describe 'uploading a form' do
 
-  it 'can accept a form' do
+  before do
     visit root_path
 
     within('#upload_form') do
       attach_file('Deals', '../example_input.tab')
       click_on 'Submit'
     end
+  end
 
+  it 'can accept a form' do
     page.should have_content('Gross Revenue')
   end
 
   it 'takes data from the form' do
-    visit root_path
-
-    within('#upload_form') do
-      attach_file('Deals', '../example_input.tab')
-      click_on 'Submit'
-    end
-
     within('#purchasers') do
       page.body.should include('Snake')
       page.body.should include('Marty')
       page.body.should include('Amy')
+    end
+  end
+
+  it 'computes the total revenue' do
+    within('#total_revenue') do
+      page.body.should include('95')
+    end
+
+    Deal.create(price: 10.0, count: 1)
+
+    visit dashboard_index_path
+
+    within('#total_revenue') do
+      page.body.should include('105')
     end
   end
 

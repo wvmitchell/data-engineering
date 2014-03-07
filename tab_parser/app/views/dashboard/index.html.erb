@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <td>Name</td>
-      <td>Deal description</td>
+      <td>Deal Description</td>
+      <td>Number Purchased</td>
       <td>Total Spent</td>
     </tr>
   </thead>
@@ -13,8 +14,13 @@
       <tr>
         <td><%= deal.purchaser %></td>
         <td><%= deal.description %></td>
+        <td><%= deal.count %></td>
         <td><%= deal.cost %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<div id='total_revenue'>
+  <p>Total Revenue: <%= @total_revenue %></p>
+</div>
