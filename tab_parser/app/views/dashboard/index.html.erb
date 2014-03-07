@@ -15,12 +15,12 @@
         <td><%= deal.purchaser %></td>
         <td><%= deal.description %></td>
         <td><%= deal.count %></td>
-        <td><%= deal.cost %></td>
+        <td>$<%= deal.cost %>0</td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <div id='total_revenue'>
-  <p>Total Revenue: <%= @total_revenue %></p>
+  <p style='font-weight:bold'>Total Revenue: $<%= @total_revenue %>0</p>
 </div>
