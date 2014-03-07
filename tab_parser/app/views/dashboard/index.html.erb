@@ -4,13 +4,16 @@
   <thead>
     <tr>
       <td>Name</td>
-      <td>Total Purchases</td>
+      <td>Deal description</td>
+      <td>Total Spent</td>
     </tr>
   </thead>
   <tbody>
     <% @deals.each do |deal| %>
       <tr>
         <td><%= deal.purchaser %></td>
+        <td><%= deal.description %></td>
+        <td><%= deal.cost %></td>
       </tr>
     <% end %>
   </tbody>
