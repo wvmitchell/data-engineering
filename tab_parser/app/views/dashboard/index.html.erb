@@ -12,8 +12,8 @@
   <tbody>
     <% @deals.each do |deal| %>
       <tr>
-        <td><%= deal.purchaser %></td>
-        <td><%= deal.description %></td>
+        <td><%= deal.purchaser.name %></td>
+        <td><%= deal.item.description %></td>
         <td><%= deal.count %></td>
         <td>$<%= deal.cost %>0</td>
       </tr>

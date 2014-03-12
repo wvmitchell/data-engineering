@@ -28,7 +28,7 @@ describe 'uploading a form' do
       page.body.should include('95')
     end
 
-    Deal.create(price: 10.0, count: 1)
+    Deal.create(count: 1, item: Item.first, purchaser: Purchaser.first, merchant: Merchant.first)
 
     visit dashboard_index_path
 
