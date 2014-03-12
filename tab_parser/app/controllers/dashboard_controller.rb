@@ -1,4 +1,3 @@
-require 'csv'
 class DashboardController < ApplicationController
 
   def new
